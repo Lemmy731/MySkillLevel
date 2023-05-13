@@ -1,48 +1,237 @@
-# Getting Started with Create React App
+# MySkillLevelDashboard
+## My Skill level dashbord built with react typescript
+### install react using typescript 
+npx create-react-app my-app --template typescript
+create component folder and inside the folder create a landpage.tsx file :+1:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+{
+  const Landingpage = ({bg}:
+    {bg:string}) => {
 
-## Available Scripts
+  return (
+<div className='col_overContainer'>
+    <div className={bg === "blue"? "blueBg" :'overall'}>
 
-In the project directory, you can run:
+    <div className='col_containerDiv'>
+        <header>
+            <h1 className={bg=== "blue"? "whiteText" : "blackText"}>My Skill Level</h1>
+            <p className={bg=== "blue"? "whiteText" : "blackText"}>answer the following question to begin your plan</p>
+            <hr className='col_hrOne'/>
+        </header>
+    </div>  
+   
+ <div className='parent_container'>
 
-### `npm start`
+    <div className='sidebar'>
+        <div className='name_icon'>
+        
+            <p className='col_text whiteText'>Your Name <br/> first,middle and last name</p>
+            <div className='col_iconContainer_one'>
+            <AccountCircleIcon/>
+            </div>
+           
+        </div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+        <div className='name_icon'>
+            <p className='col_text whiteText'>City Location</p>
+            <div className='col_iconContainer'>
+            <AssignmentIndIcon/>
+            </div>
+           
+        </div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        <div className='name_icon'>
+            <p className='col_text whiteText'>Telephone Number</p>
+            <div className='col_iconContainer'>
+            <CallIcon/>
+            </div>
+            
+        </div>
 
-### `npm test`
+        <div className='name_icon'>
+            <p className='col_text whiteText'>House Address</p>
+            <div className='col_iconContainer'>
+            <HouseIcon/>
+            </div>
+           
+        </div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        <div className='name_icon'>
+            <p className='col_text whiteText'>Country of Residence</p>
+            <div className='col_iconContainer'>
+            <LanguageIcon/>
+            </div>
+           
+        </div>
+    </div>
 
-### `npm run build`
+    <div className='col_hr_container'>
+      <hr className='col_hr'/>
+    </div>
+<div className='step'>
+     <div className='col_stepContainer'>
+        <p className={bg=== "blue"? "whiteText" : "blackText"}>step 1/5</p>
+       <h1 className={bg=== "blue"? "whiteText" : "blackText"}>Let start with your name</h1>
+       <p  className={bg=== "blue"? "whiteText" : "blackText"}>please fill in the details below</p>
+       <hr className='second_hr'/>
+    </div>
+    <div>
+       <p className={bg=== "blue"? "whiteText" : "blackText"}>enter your name</p>
+       <div className='input_button_container'>
+       <input className='col_input'/>
+       <button className='col_button'>next step</button>
+       </div>
+       
+    </div>
+</div>
+    
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
+</div>
+</div>
+  )
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default Landingpage
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+create a landpage.css file in the component folder
 
-### `npm run eject`
+```
+{
+  .sidebar{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+height: 300px;
+margin-right: 15px;
+}
+.col_overContainer{
+    margin-top: 30px;
+}
+.name_icon{
+display: flex;
+align-items: center;
+width: 150px;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+}
+.parent_container{
+display: flex;
+}
+.col_hr{
+    border: none; 
+    border-left: 1px solid black; 
+    height: 500px; 
+    
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+}
+.overall{
+    /* margin-left: 50px;
+    margin-right: 50px; */
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    width: 90vw;
+    padding-left: 20px;
+    margin: 20px;
+    border-radius: 25px;  
+    box-shadow: 1px 5px 15px #888888;  
+    margin-top: 100px;
+}
+.blueBg{
+    width: 90vw;
+    padding-left: 20px;
+    margin: 20px;
+    border-radius: 25px;  
+    box-shadow: 1px 5px 15px #888888;  
+    background-color: #200764;
+    
+}
+.col_input{
+   width: 670px;
+   border-radius: 5px;
+   padding: 10px;
+   border: 2px solid #37cad6;
+   margin-right: 10px;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+}
+.col_button{
+    background-color: #37cad6;
+    border-radius: 50px;
+    border: none;
+    width: 100px;
+    margin-top: 20px;
+    padding: 14px;
+    margin-right: 10px;
+}
+.step{
+    margin-left: 20px;
+}
+.second_hr{
+    width: 660px;
+    padding-right: 10px;
+    /* border-left: 20px; */
+    margin-left: 20px;
+}
 
-## Learn More
+.input_button_container{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.col_hrOne{
+    /* padding-top: 50px; */
+    width: 800px;
+    padding-right: 60px;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# MySkillLevel
-My Skill level dashbord built with react typescript
+}
+.col_containerDiv{
+ /* margin-top: 100px; */
+ 
+}
+.col_hr_container{
+    /* background-color: blue;
+    width: 200px; */
+    /* margin-bottom: 100px; */
+    margin-top: -17px;
+}
+.col_text{
+    width: 80px;
+    margin-right: 20px;
+}
+.col_iconContainer{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #4d3d7a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.col_iconContainer_one{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #37cad6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.whiteText{
+    color: white;
+}
+.blackText{
+    color: black;
+}
+}
+```
+
+
+
+
+
